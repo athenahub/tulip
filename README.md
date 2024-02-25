@@ -7,4 +7,5 @@ Website made with flask for education purposes
 pip install flask
 pip install flask-login
 pip install flask-sqlalchemy
+pip install pyodbc
 ```
