@@ -2,5 +2,33 @@
 {% block title %}SignUp{% endblock %}
 
 {% block content %}
-<h1>This is the sign up page</h1>
+<div class="container text-center">
+    <div class="row justify-content-center">
+        <div class="col-10 col-md-5 align-self-center ">
+            <h1>Welcome!</h1>
+            <form method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="password1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password1" name="password1">
+                </div>
+                <div class="mb-3">
+                    <label for="password2" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="password2" name="password2">
+                </div>
+                <div class="mb-3">
+                    <p>Already have an account? <a href="/login">Log in</a></p>
+                    <button class="btn btn-primary" type="submit">SignUp</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
