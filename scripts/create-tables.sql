@@ -1,3 +1,13 @@
+
+-- Create the database
+CREATE DATABASE Tulip;
+GO
+
+-- Create the tables
+
+USE Tulip;
+GO
+
 -- Users Table
 CREATE TABLE Users (
     UserID INT IDENTITY(1,1) PRIMARY KEY,
@@ -44,8 +54,30 @@ CREATE TABLE ImageTags (
 );
 
 -- DominantColors Table
-CREATE TABLE DominantColors (
+CREATE TABLE Colors (
     ColorID INT IDENTITY(1,1) PRIMARY KEY,
     ImageID INT FOREIGN KEY REFERENCES Images(ImageID),
     ColorHex NVARCHAR(7), -- Assuming a standard hexadecimal color representation (e.g., "#RRGGBB")
 );
+
+GO
+
+-- Create Logins
+
+USE master;
+GO
+
+CREATE LOGIN TulipAppLogin WITH PASSWORD = 'T$l1p4pp!0g1n'
+
+GO
+
+-- Create Users and Assign Permissions
+
+USE Tulip;
+GO
+
+CREATE USER TulipAppUser FOR LOGIN TulipAppLogin;
+
+GO
+
+GRANT SELECT, INSERT, UPDATE ON Users TO TulipAppUser;
