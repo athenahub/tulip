@@ -11,6 +11,8 @@ class User(db.Model, UserMixin):
     #images = db.relationship('Image')
     #likes = db.relationship('Like')
     #downloads = db.relationship('Download')
+    def get_id(self):
+        return (self.UserID)
 
 class Image(db.Model):
     __tablename__ = 'Images'
